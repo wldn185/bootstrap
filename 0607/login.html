@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인페이지</title>
+  <script></script>
+</head>
+<body>
+  <h2>로그인 페이지</h2>
+  <form name="" method="post" action="login.php">
+    <fieldset>
+      <legend>Login</legend>
+      <p>
+        <label for="">ID : </label>
+        <input type="text">
+      </p>
+      <p>
+        <label for="">PASSWORD : </label>
+        <input type="password" name="" id="">
+      </p>
+      <p>
+        <input type="submit" value="로그인">
+        <input type="reset" value="취소" name="" id="">
+      </p>
+      <p>
+        <a href="" title="네이버로그인">네이버 로그인</a>
+        <a href="javascript:void(0);" onclick="kakaoLogin()" title="카카오로그인">카카오 로그인</a>
+        <a href="" title="구글로그인">구글 로그인</a>
+        <a href="" title="애플로그인">애플 로그인</a>
+      </p>
+    </fieldset>
+  </form>
+
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+  <script>
+    Kakao.init('056bcfb6c1df1425f76bbd781809dc91');
+    // sdk초기화여부판단 
+    console.log(Kakao.isInitialized());
+    //카카오로그인 
+    function kakaoLogin() {
+      //Kakao.Auth.authorize()
+      Kakao.Auth.login({
+        success: function (response) {
+          Kakao.API.request({ 
+            url: '/v2/user/me', success: function (response) {
+              console.log(response)
+              }, fail: function (error) { 
+                console.log(error)
+              }, 
+              })
+            }, fail: function (error) { 
+              console.log(error) 
+            }, 
+          }) 
+        } 
+
+      //카카오로그아웃 
+      function kakaoLogout() {
+      if (Kakao.Auth.getAccessToken()) { 
+        Kakao.API.request({
+      url: '/v1/user/unlink',
+      })
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+      // Kakao.API.request({ 
+      // url: '/v1/user/unlink', success: function (response) { 
+      // console.log(response) 
+      // }, fail: function (error) { 
+      //   console.log(error) }, 
+      //});
+      Kakao.Auth.setAccessToken(undefined) 
+      }}
+  </script>
+</body>
+</html>

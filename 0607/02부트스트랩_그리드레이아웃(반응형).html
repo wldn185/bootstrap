@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02부트스트랩_그리드레이아웃(반응형)</title>
+  <!-- 1. 부트스츠랩 cdn방식으로 css연결하기 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    div{
+      background-color: #ccc;
+      border: 3px solid #00f;
+      line-height: 100px;
+    }
+  </style>
+  <!-- 1. 부트스츠랩 cdn방식으로 js연결하기 -->  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h2>02부트스트랩_그리드레이아웃(반응형)</h2>
+  <p>부트스트랩은 하나의 행에 반드시 12개의 열(컬럼)을 사용해야합니다.</p>
+  <p>만약 12개의 열(컬럼)을 모두 사용하지 않으려면, 더 넓은 열(컬럼)을 만들기 위해 열(컬럼)들을 하나의 그룹으로 만들어 사용할 수 있습니다.</p>
+
+  <h3>그리드 시스템에서는 화면의 너비별 4개의 클래스를 가지고 잇습니다.</h3>
+  <ul>
+    <li>xl - 스마트폰용, 화면의 넓이가 768이하 일 때</li>
+    <li>sm - 태블릿용, 화면의 넓이가 768보다 크거나 같을 때</li>
+    <li>md - 큰 태블릿용, 작은 노트북용, 화면의 넓이가 992px보다 크거나 같을 때</li>
+    <li>lg - 일반 노트북, 데스크탑 px, 화면의 넓이가 1200px보다 크거나 같을 때</li>
+  </ul>
+
+  <h3>그리드 레이아웃 실습</h3>
+  <div class="row"> <!-- 992px 이상인 경우 -->
+    <div class="col-lg-12">12컬럼을 한줄로 배치</div>
+  </div>
+  <br>
+  <div class="row"> <!-- 768px 이상인 경우 -->
+    <div class="col-md-4">12컬럼을 4칸씩 병합하여 한줄로 배치</div>
+    <div class="col-md-4">12컬럼을 4칸씩 병합하여 한줄로 배치</div>
+    <div class="col-md-4">12컬럼을 4칸씩 병합하여 한줄로 배치</div> <!-- 12개의 컬럼을 4컬럼씩 묶음 -->
+  </div>
+  <br>
+  <div class="row"> <!-- 576px 이상인 경우 -->
+    <div class="col-xl-6">12컬럼을 6칸씩 병합하여 배치</div>
+    <div class="col-xl-6">12컬럼을 6칸씩 병합하여 배치</div>
+  </div>
+</body>
+</html>
