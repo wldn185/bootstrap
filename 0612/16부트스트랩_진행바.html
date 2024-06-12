@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>16부트스트랩_진행바</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+  <h2>16부트스트랩_진행바</h2>
+  <p>스틱형 막대, 애니메이션 배경 및 텍스트 레이블을 지원하는 Bootstrap 사용자 정의의 프로그레스 바</p>
+  <p>
+    프로그레스 콤포넌트는 2개의 html요소와 너비를 설정하기 위한 몇 가지 css요소와 속성들로 빌드됩니다.
+    html5 <progress></progress> progress 태그요소는 사용하지 않으므로, 프로그레스 바를 쌓아 올리거나 애니메이션화 하거나 텍스트 레벨을 배치할 수 있습니다. 
+  </p>
+
+  <ul>
+    <li>프로그레스 바의 최대 너비를 나타내기 위해 .progress를 사용합니다.</li>
+    <li>진행상황을 나타내기 위해 안쪽에 .progress-bar를 사용합니다.</li>
+    <li>.progress-bar는 폭을 설정하기 위해 인라인 스타일, 유틸리티 글래스 또는 사용자 정의 css를 필요로합니다.</li>
+    <li>.progress-bar는 엑세스 할 수 있도록 몇개의 role과 aria속성을 필요로 하며 접근성이 있는 이름(aria-label, aria-labeledby 등)을 포합합니다.</li>
+  </ul>
+
+  <section style="width: 1000px;">
+    <h3>1. 프로그래스 바 기본설정</h3>
+    <div class="progress"></div><br>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <br>
+    <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar" style="width: 25%;">html</div>
+    </div>
+    <br>
+    <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar" style="width: 25%;">css</div>
+    </div>
+    <br>
+    <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar" style="width: 25%;">javascript</div>
+    </div>
+    <br>
+    <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar" style="width: 25%;">jquery</div>
+    </div>
+    <br>
+    <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar" style="width: 25%;">php</div>
+    </div>
+    <br>
+    <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar" style="width: 25%;">sql database</div>
+    </div>
+    <br>
+    <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar" style="width: 25%;">git & github</div>
+    </div>
+  
+    <h3>2. 프로그레스 바 색상변경하기</h3>
+    <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 50px;">
+      <div class="progress-bar bg-success" style="width: 25%;">javascript</div>
+    </div>
+    <br>
+    <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar text-bg-danger" style="width: 25%;">javascript</div>
+    </div>
+  
+    <p>프로그레스바 배경색은 .progress-bar안에 .bg-success를 적용하고, 글자색을 변경하고자 할 때는 .text-success클래스를 적용한다.</p>
+  </section>
+
+  <h3>3. 프로그레스바 스트라이프무늬 적용하기</h3>
+  <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar progress-bar-striped" style="width: 25%;" aria-label="스트라이프 무늬">git & github</div>
+  </div>
+  <br>
+  <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 25%;" aria-label="스트라이프 무늬 애니메이션">git & github</div>
+  </div>
+  <p>.progress-bar-striped : 줄무늬 추가</p>
+  <p>.progress-bar-animated : 애니메이션 효과 적용</p>
+</body>
+</html>
